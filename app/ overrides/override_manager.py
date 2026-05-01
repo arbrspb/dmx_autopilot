@@ -1,9 +1,6 @@
-# app/overrides/override_manager.py
 from app.freestyler import adapter
 from app.core.state import State
-import time
 
-# Пример override-кнопок
 OVERRIDES = {
     "strobe": {"type": "hold", "code": 72, "duration": 1.5},
     "blackout": {"type": "toggle", "code": 73},
@@ -31,7 +28,7 @@ class OverrideManager:
         if not override:
             return
         if override["type"] == "hold":
-            print(f"Cannot deactivate hold override {override_id} manually")
+            print(f"Cannot manually deactivate hold override {override_id}")
         elif override["type"] == "toggle" and self.state.is_override_active(override_id):
             adapter.press_button(override["code"])
             self.state.active_overrides[override_id] = False
