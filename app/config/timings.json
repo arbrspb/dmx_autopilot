@@ -1,0 +1,5 @@
+{
+  "button_press_sec": 0.1,
+  "pause_between_scenes_sec": 0.3,
+  "safe_stop_delay_sec": 0.2
+}

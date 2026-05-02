@@ -1,0 +1,20 @@
+{
+  "scenes": [
+    {
+      "id": "warm_static",
+      "name": "Warm Static",
+      "type": "sequence",
+      "start_code": 505,
+      "stop_code": 525,
+      "duration_sec": 10
+    },
+    {
+      "id": "blue_move",
+      "name": "Blue Move",
+      "type": "sequence",
+      "start_code": 506,
+      "stop_code": 526,
+      "duration_sec": 12
+    }
+  ]
+}

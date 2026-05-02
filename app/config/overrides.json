@@ -1,0 +1,17 @@
+{
+  "overrides": [
+    {
+      "id": "strobe",
+      "name": "Strobe",
+      "type": "hold",
+      "code": 72,
+      "duration_sec": 1.5
+    },
+    {
+      "id": "blackout",
+      "name": "Blackout",
+      "type": "toggle",
+      "code": 73
+    }
+  ]
+}
