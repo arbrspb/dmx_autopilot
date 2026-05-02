@@ -1,15 +1,11 @@
-import sys
-import os
 import time
+# Вместо отдельных импортов — импорт из пакета app
+from app import State, SceneManager, OverrideManager, init_globals
 
-# Добавляем корень проекта
-project_root = os.path.dirname(os.path.abspath(__file__))
-if project_root not in sys.path:
-    sys.path.insert(0, project_root)
+# Инициализируем глобальные настройки (заполняет GLOBAL_CONFIG и т.д.)
+init_globals()
 
-from app.overrides.override_manager import OverrideManager
-from app.scenes.scene_manager import SceneManager
-from app.core.state import State
+# Создаём объекты (порядок важен: сначала State, потом менеджеры)
 state = State()
 scene_manager = SceneManager(state)
 override_manager = OverrideManager(state)
