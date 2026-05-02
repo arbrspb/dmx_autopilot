@@ -1,0 +1,13 @@
+{
+  "looks": [
+    {
+      "id": "blue_left_right",
+      "name": "Blue + Left Right",
+      "programs": ["pr13_left_right", "blue"],
+      "overrides": [],
+      "default_duration_sec": 12,
+      "energy": 3,
+      "enabled": true
+    }
+  ]
+}
