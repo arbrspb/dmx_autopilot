@@ -1,8 +1,15 @@
-from app.core.state import State
-from app.scenes.scene_manager import SceneManager
-from app.overrides.override_manager import OverrideManager
+import sys
+import os
 import time
 
+# Добавляем корень проекта
+project_root = os.path.dirname(os.path.abspath(__file__))
+if project_root not in sys.path:
+    sys.path.insert(0, project_root)
+
+from app.overrides.override_manager import OverrideManager
+from app.scenes.scene_manager import SceneManager
+from app.core.state import State
 state = State()
 scene_manager = SceneManager(state)
 override_manager = OverrideManager(state)
