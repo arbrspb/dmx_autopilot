@@ -5,7 +5,7 @@
       "name": "Strobe",
       "type": "hold",
       "code": 72,
-      "duration_sec": 1.5
+      "duration": 1.5
     },
     {
       "id": "blackout",
