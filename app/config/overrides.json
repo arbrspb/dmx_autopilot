@@ -14,20 +14,21 @@
     "notes": "code = 66 + ((tab - 1) * 30) + (slot - 1). Нужно проверить на реальных кнопках."
   },
   "overrides": [
-    {
-      "id": "blender",
-      "name": "Blender",
-      "freestyler_name": "Blender",
-      "tab": 1,
-      "slot": 1,
-      "type": "hold",
-      "code": 66,
-      "category": "effect",
-      "fixture_group": "blender",
-      "energy": 3,
-      "enabled": true,
-      "notes": "Уточнить: toggle или hold"
-    },
+  {
+    "id": "blender",
+    "name": "Blender",
+    "freestyler_name": "Blender",
+    "tab": "MAIN",
+    "slot": 1,
+    "type": "hold",
+    "code": 66,
+    "duration": 7.0,
+    "category": "effect",
+    "fixture_group": "blender",
+    "energy": 3,
+    "enabled": true,
+    "notes": "Работает только при удержании"
+  },
     {
       "id": "blender_strobe_min",
       "name": "Blender strobe min",
