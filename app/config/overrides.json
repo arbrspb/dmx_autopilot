@@ -5,30 +5,38 @@
   "code_scheme": {
     "override_button_base": 66,
     "buttons_per_tab": 30,
+    "formula": "code = 66 + ((tab - 1) * 30) + (slot - 1)",
     "tab_1_code": 234,
     "tab_2_code": 235,
     "tab_3_code": 236,
     "tab_4_code": 237,
     "tab_5_code": 238,
     "tab_6_code": 239,
-    "notes": "code = 66 + ((tab - 1) * 30) + (slot - 1). Нужно проверить на реальных кнопках."
+    "notes": "MAIN tab: slot 1 = code 66, slot 2 = code 67, slot 3 = code 68, etc."
   },
   "overrides": [
-  {
-    "id": "blender",
-    "name": "Blender",
-    "freestyler_name": "Blender",
-    "tab": "MAIN",
-    "slot": 1,
-    "type": "hold",
-    "code": 66,
-    "duration": 7.0,
-    "category": "effect",
-    "fixture_group": "blender",
-    "energy": 3,
-    "enabled": true,
-    "notes": "Работает только при удержании"
-  },
+    {
+      "id": "blender",
+      "name": "Blender",
+      "freestyler_name": "Blender",
+      "tab": 1,
+      "slot": 1,
+      "type": "hold",
+      "code": 66,
+      "duration": 7.0,
+      "min_duration": 0.5,
+      "max_duration": 7.0,
+      "intensity_profiles": {
+        "soft": 2.0,
+        "medium": 4.0,
+        "strong": 7.0
+      },
+      "category": "effect",
+      "fixture_group": "blender",
+      "energy": 3,
+      "enabled": true,
+      "notes": "Hold. Чем дольше удерживаем, тем ярче плавно набирает. После отпускания плавно тухнет."
+    },
     {
       "id": "blender_strobe_min",
       "name": "Blender strobe min",
@@ -38,11 +46,13 @@
       "type": "hold",
       "code": 67,
       "duration": 1.0,
+      "min_duration": 0.2,
+      "max_duration": 5.0,
       "category": "strobe",
       "fixture_group": "blender",
       "energy": 3,
       "enabled": true,
-      "notes": "Уточнить длительность"
+      "notes": "Hold. Удерживаем — работает минимальный строб, отпускаем — прекращается."
     },
     {
       "id": "blender_strobe_med",
@@ -53,11 +63,13 @@
       "type": "hold",
       "code": 68,
       "duration": 1.0,
+      "min_duration": 0.2,
+      "max_duration": 5.0,
       "category": "strobe",
       "fixture_group": "blender",
       "energy": 4,
       "enabled": true,
-      "notes": "Уточнить длительность"
+      "notes": "Hold. Удерживаем — работает средний строб, отпускаем — прекращается."
     },
     {
       "id": "blender_strobe_fast",
@@ -68,11 +80,13 @@
       "type": "hold",
       "code": 69,
       "duration": 0.8,
+      "min_duration": 0.2,
+      "max_duration": 5.0,
       "category": "strobe",
       "fixture_group": "blender",
       "energy": 5,
       "enabled": true,
-      "notes": "Уточнить длительность"
+      "notes": "Hold. Удерживаем — работает быстрый строб, отпускаем — прекращается."
     },
     {
       "id": "gobo_3_pol",
@@ -86,7 +100,7 @@
       "fixture_group": "heads",
       "energy": 3,
       "enabled": true,
-      "notes": "Уточнить поведение"
+      "notes": "Toggle. Проверить: первое нажатие включает, второе выключает."
     },
     {
       "id": "rombes",
@@ -100,7 +114,7 @@
       "fixture_group": "laser",
       "energy": 3,
       "enabled": true,
-      "notes": "Уточнить поведение"
+      "notes": "Toggle. Проверить поведение отдельно."
     },
     {
       "id": "main_blue_1",
@@ -115,7 +129,7 @@
       "color": "blue",
       "energy": 1,
       "enabled": true,
-      "notes": "Если у тебя strobe уже был на code 72, значит порядок кнопок отличается — проверить"
+      "notes": "Toggle. Первая кнопка Blue на MAIN."
     },
     {
       "id": "main_left_right",
@@ -130,7 +144,7 @@
       "movement": "left_right",
       "energy": 3,
       "enabled": true,
-      "notes": "Если blackout уже был на code 73, значит порядок кнопок отличается — проверить"
+      "notes": "Toggle. Движение Left-Right."
     },
     {
       "id": "shehds_strobe_med",
@@ -138,14 +152,13 @@
       "freestyler_name": "SHEHDS_strobeMED",
       "tab": 1,
       "slot": 9,
-      "type": "hold",
+      "type": "toggle",
       "code": 74,
-      "duration": 1.0,
       "category": "strobe",
       "fixture_group": "shehds",
       "energy": 4,
       "enabled": true,
-      "notes": "Уточнить длительность"
+      "notes": "Пока toggle по твоему правилу: остальные кнопки отдельно проверяем."
     },
     {
       "id": "shehds_strobe_fast",
@@ -153,14 +166,13 @@
       "freestyler_name": "SHEHDS_strobeFast",
       "tab": 1,
       "slot": 10,
-      "type": "hold",
+      "type": "toggle",
       "code": 75,
-      "duration": 0.8,
       "category": "strobe",
       "fixture_group": "shehds",
       "energy": 5,
       "enabled": true,
-      "notes": "Уточнить длительность"
+      "notes": "Пока toggle по твоему правилу: остальные кнопки отдельно проверяем."
     },
     {
       "id": "strobe_80_layer",
@@ -168,14 +180,13 @@
       "freestyler_name": "Strobe80 Layer",
       "tab": 1,
       "slot": 11,
-      "type": "hold",
+      "type": "toggle",
       "code": 76,
-      "duration": 0.8,
       "category": "strobe",
       "fixture_group": "heads",
       "energy": 5,
       "enabled": true,
-      "notes": "Уточнить длительность"
+      "notes": "Пока toggle по твоему правилу: остальные кнопки отдельно проверяем."
     },
     {
       "id": "cirkkle_quick",
@@ -190,7 +201,7 @@
       "movement": "circle_quick",
       "energy": 4,
       "enabled": true,
-      "notes": "Уточнить название: возможно Cirkle_quick"
+      "notes": "Toggle. Название позже можно поправить на Cirkle/Circle."
     },
     {
       "id": "main_blue_strobe_4par",
@@ -206,7 +217,7 @@
       "strobe": true,
       "energy": 4,
       "enabled": true,
-      "notes": "Уточнить toggle/hold"
+      "notes": "Toggle. Синий строб на 4 PAR."
     },
     {
       "id": "main_blue_2",
@@ -221,7 +232,7 @@
       "color": "blue",
       "energy": 1,
       "enabled": true,
-      "notes": "Вторая кнопка Blue; уточнить отличие"
+      "notes": "Toggle. Вторая кнопка Blue на MAIN."
     },
     {
       "id": "blackout",
@@ -235,7 +246,7 @@
       "fixture_group": "all",
       "energy": 0,
       "enabled": true,
-      "notes": "Если у тебя blackout реально срабатывал на 73, оставь 73 и проверь порядок кнопок"
+      "notes": "Toggle. Аварийная/служебная кнопка затемнения."
     },
     {
       "id": "ball_blue",
@@ -250,7 +261,7 @@
       "color": "blue",
       "energy": 2,
       "enabled": true,
-      "notes": "Уточнить"
+      "notes": "Toggle. Синий Ball."
     }
   ]
 }

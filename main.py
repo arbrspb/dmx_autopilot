@@ -1,36 +1,26 @@
 import time
 
-from app import State, SceneManager, OverrideManager, init_globals
-
-
-init_globals()
+from app.core.state import State
+from app.overrides.override_manager import OverrideManager
 
 state = State()
-scene_manager = SceneManager(state)
 override_manager = OverrideManager(state)
 
-
-print("=== Test Scenes From Config ===")
-
-scene_manager.start_scene("pr1_plus_plus_plus")
-time.sleep(5)
-scene_manager.stop_scene("pr1_plus_plus_plus")
-
+# Blender мягко
+override_manager.activate_override("blender", duration_sec=2.0)
 time.sleep(1)
 
-# Эта сцена пока не запустится, потому что start_code = null.
-# Но это нормальная проверка обработки ошибки.
-scene_manager.start_scene("pr1_plus")
+# Blender средне
+override_manager.activate_override("blender", duration_sec=4.0)
 time.sleep(1)
-scene_manager.stop_scene("pr1_plus")
 
+# Blender сильно
+override_manager.activate_override("blender", duration_sec=7.0)
+time.sleep(1)
 
-print("=== Test Overrides From Config ===")
-
-override_manager.activate_override("blender")
-
-time.sleep(7)
-
-override_manager.activate_override("blackout")
-time.sleep(2)
-override_manager.deactivate_override("blackout")
+# Или через профили из JSON
+override_manager.activate_intensity("blender", "soft")
+time.sleep(1)
+override_manager.activate_intensity("blender", "medium")
+time.sleep(1)
+override_manager.activate_intensity("blender", "strong")
