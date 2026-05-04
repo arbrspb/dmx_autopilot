@@ -15,28 +15,28 @@
     "notes": "MAIN tab: slot 1 = code 66, slot 2 = code 67, slot 3 = code 68, etc."
   },
   "overrides": [
-    {
-      "id": "blender",
-      "name": "Blender",
-      "freestyler_name": "Blender",
-      "tab": 1,
-      "slot": 1,
-      "type": "hold",
-      "code": 66,
-      "duration": 7.0,
-      "min_duration": 0.5,
-      "max_duration": 7.0,
-      "intensity_profiles": {
-        "soft": 2.0,
-        "medium": 4.0,
-        "strong": 7.0
-      },
-      "category": "effect",
-      "fixture_group": "blender",
-      "energy": 3,
-      "enabled": true,
-      "notes": "Hold. Чем дольше удерживаем, тем ярче плавно набирает. После отпускания плавно тухнет."
+      {
+    "id": "blender",
+    "name": "Blender",
+    "freestyler_name": "Blender",
+    "tab": 1,
+    "slot": 1,
+    "type": "hold",
+    "code": 66,
+    "duration": 7.0,
+    "min_duration": 0.5,
+    "max_duration": 7.0,
+    "intensity_profiles": {
+      "soft": 2.0,
+      "medium": 4.0,
+      "strong": 7.0
     },
+    "category": "effect",
+    "fixture_group": "blender",
+    "energy": 3,
+    "enabled": true,
+    "notes": "Hold: чем дольше держим, тем ярче набирает; после отпускания плавно тухнет"
+  },
     {
       "id": "blender_strobe_min",
       "name": "Blender strobe min",
